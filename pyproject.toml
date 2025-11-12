@@ -5,7 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "spotify_to_tidal"
 version = "1.0.4"
-requires-python = ">= 3.10"
+requires-python = ">=3.10"
+description = "…(your description)…"
+readme = "README.md"
+license = { text = "…" }           # if you have license text
+authors = [ { name="Your Name", email="you@example.com" } ]  # optional
 
 dependencies = [
   "spotipy~=2.24.0",
@@ -13,13 +17,18 @@ dependencies = [
   "pyyaml~=6.0",
   "tqdm~=4.64",
   "sqlalchemy~=2.0",
-  "pytest~=8.0",
-  "pytest-mock~=3.8"
 ]
 
-[tools.setuptools.packages."spotify_to_tidal"]
-where = "src"
-include = "spotify_to_tidal*"
+[project.optional-dependencies]
+dev = [
+  "pytest~=8.0",
+  "pytest-mock~=3.8",
+]
 
+# Scripts / entry points
 [project.scripts]
 spotify_to_tidal = "spotify_to_tidal.__main__:main"
+
+# uv‐specific configuration
+[tool.uv]
+packages = { src = "src", include = ["spotify_to_tidal*"] }
