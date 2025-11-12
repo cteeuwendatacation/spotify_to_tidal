@@ -2,11 +2,8 @@ A command line tool for importing your Spotify playlists into Tidal. Due to vari
 
 Installation
 -----------
-Clone this git repository and then run:
-
-```bash
-python3 -m pip install -e .
-```
+- Clone this git repository. 
+- Make sure that you have [UV](https://docs.astral.sh/uv/getting-started/installation/) installed.
 
 Setup
 -----
@@ -18,26 +15,24 @@ Setup
 
 Usage
 ----
-To synchronize all of your Spotify playlists with your Tidal account run the following from the project root directory
-Windows ignores python module paths by default, but you can run them using `python3 -m spotify_to_tidal`
 
 ```bash
-spotify_to_tidal
+uv run spotify_to_tidal
 ```
 
 You can also just synchronize a specific playlist by doing the following:
 
 ```bash
-spotify_to_tidal --uri 1ABCDEqsABCD6EaABCDa0a # accepts playlist id or full playlist uri
+uv run spotify_to_tidal --uri 1ABCDEqsABCD6EaABCDa0a # accepts playlist id or full playlist uri
 ```
 
 or sync just your 'Liked Songs' with:
 
 ```bash
-spotify_to_tidal --sync-favorites
+uv run spotify_to_tidal --sync-favorites
 ```
 
-See example_config.yml for more configuration options, and `spotify_to_tidal --help` for more options.
+See example_config.yml for more configuration options, and `uv run spotify_to_tidal --help` for more options.
 
 ---
 
