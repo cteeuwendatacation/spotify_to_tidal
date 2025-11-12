@@ -32,3 +32,8 @@ spotify_to_tidal = "spotify_to_tidal.__main__:main"
 # uv‐specific configuration
 [tool.uv]
 packages = { src = "src", include = ["spotify_to_tidal*"] }
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+reportPrivateImportUsage = "none"
